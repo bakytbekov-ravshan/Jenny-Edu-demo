@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        nodejs 'node20' // Make sure to configure this in Jenkins global tools
+    }
     stages {
         stage('Checkout') {
             steps {
