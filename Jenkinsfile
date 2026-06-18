@@ -15,11 +15,12 @@ pipeline {
                 sh 'npm install'
             }
         }
-
-        stage('Run Tests') {
+stage('Run Tests') {
             steps {
-                sh 'npx jest'
+                // Запускаем jest напрямую через node, так Linux не сможет заблокировать права доступа
+                sh 'node ./node_modules/jest/bin/jest.js'
             }
+        }
         }
 
         stage('Build') {
