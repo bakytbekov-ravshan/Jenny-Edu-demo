@@ -7,5 +7,4 @@ function greet(name) {
 }
 
 console.log(greet('World'))
-
-export default { add, greet }
+module.exports = { add, greet }
